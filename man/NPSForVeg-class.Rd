@@ -50,6 +50,10 @@
 
 \item{\code{Herbs}}{a data.frame with herbacious plant data}
 
+\item{\code{Soils}}{a data.frame with soil chemistry data}
+
+\item{\code{ChemVars}}{a data.frame with soil chemistry variable names}
+
 \item{\code{Commons}}{a data.frame which links common names to Latin names}
 }}
 

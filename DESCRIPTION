@@ -37,6 +37,8 @@ Collate:
     'getPlants.R'
     'getPlotNames.R'
     'getPlots.R'
+    'getSoilChemNames.R'
+    'getSoils.R'
     'importERMN.R'
     'importMIDN.R'
     'importNCRN.R'

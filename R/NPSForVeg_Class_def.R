@@ -22,6 +22,8 @@
 #' @slot ShSeedlings a data.frame with shrub seedling data
 #' @slot Vines a data.frame with vine data
 #' @slot Herbs a data.frame with herbacious plant data
+#' @slot Soils a data.frame with soil chemistry data
+#' @slot ChemVars a data.frame with soil chemistry variable names
 #' @slot Commons a data.frame which links common names to Latin names
 #' 
 #' @exportClass NPSForVeg
@@ -51,6 +53,8 @@ setClass(Class="NPSForVeg",           ### Name of the Class
           ShSeedlings="data.frame",   ### Data.frame with shrub seeling data
           Vines="data.frame",         ### Data.frame with vines on trees data
           Herbs="data.frame",         ### Data.frame with herbaceoous/ground cover data
+          Soils="data.frame",         ### Data.frame with soil chemistry data ###KMM
+          ChemVars="data.frame",       ### Data.frame with soil chemistry variable names  
           Commons="data.frame"        ### Data.frame with Latin and common names
   )
 )
