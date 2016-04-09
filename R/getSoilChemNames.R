@@ -17,13 +17,12 @@ setGeneric(name="getSoilChemNames",function(object,chem.names="chemvar"){standar
 
 setMethod(f="getSoilChemNames", signature=c(object="list"),
   function(object,chem.names){
-    sapply(object,FUN=getSoilChemNames, chem.names=ch.names) } )  
- 
+    sapply(object,FUN=getSoilChemNames, chem.names=chem.names) } )  
 
 
 setMethod(f="getSoilChemNames", signature=c(object="NPSForVeg"),
           function(object,chem.names){
-            switch(chem.name,
+            switch(chem.names,
             chemvar = return(object@ChemVars$ChemVar),
             varlong = return(object@ChemVars$ChemistryVariable),
             stop("Unrecognized type in getSoilChemNames")
