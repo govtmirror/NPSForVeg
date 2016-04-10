@@ -15,7 +15,7 @@
 
 
 
-setGeneric(name="getSoils",function(object,values,cycles=NA, years=NA, plots=NA, output="dataframe"){standardGeneric("getSoils")}, signature="object")
+setGeneric(name="getSoils",function(object,values="Ohor",cycles=NA, years=NA, plots=NA, output="dataframe"){standardGeneric("getSoils")}, signature="object")
 
 setMethod (f="getSoils", signature="list",
           function(object,values,cycles,years,plots,output) 
@@ -30,12 +30,12 @@ setMethod (f="getSoils", signature="list",
 setMethod(f="getSoils", signature=c(object="NPSForVeg"), 
           function(object,values,cycles,years,plots,output){
             switch(values,
-                     all=XSoils<-(object@XSoils),
-                     Ohor=XSoils<-(XSoils[XSoils$Horiz %in% c("O"),]),
-                     Ahor=XSoils<-(XSoils[XSoils$Horiz %in% c("A"),]),
+                     all=XSoils<-object@Soils,
+                     Ohor=XSoils<-object@Soils[object@Soils$Horiz=="O",],
+                     Ahor=XSoils<-object@Soils[object@Soils$Horiz=="A",],
                      stop("Unknown Soil Type"))
 
-            if(!sum(is.na(values))>0) XSoils<-XSoils[XSoils$Horiz %in% values,]
+ #           if(!sum(is.na(values))>0) XSoils<-XSoils[XSoils$Horiz %in% values,]
             
             if(!sum(is.na(cycles))>0) XSoils<-XSoils[XSoils$Cycle %in% cycles,]
             
